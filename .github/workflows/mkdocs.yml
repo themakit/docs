@@ -1,0 +1,2 @@
+- name: MkDocs GitHub Deploy
+  uses: vinomaster/mkdocs-ghpages-docker-action@v1
