@@ -1,0 +1,7 @@
+site_name: ThemaKit 
+site_url: https://themakit.github.io/docs
+theme:
+  name: material
+  favicon: icon.png
+  logo: icon.png
+repo_url: https://github.com/themakit/docs
