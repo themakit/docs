@@ -1,7 +1,62 @@
-site_name: ThemaKit 
-site_url: https://themakit.github.io/docs
+site_name: ThemaKit
+site_description: Modern UI Components for React.
+site_author: ThemaKit
+site_url: https://themakit.js.org/docs
+
 theme:
   name: material
-  favicon: icon.png
-  logo: icon.png
-repo_url: https://github.com/themakit/docs
+  palette:
+    primary: mint
+    accent: mint
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  icon:
+    logo: logo
+    favicon: logo
+
+repo_url: https://github.com/themakit/website
+edit_uri: edit/main/docs/
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - tables
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+  - Components:
+    - Layout:
+      - Container: components/layout/container.md
+      - Grid: components/layout/grid.md
+      - Flex: components/layout/flex.md
+      - Stack: components/layout/stack.md
+    - Inputs:
+      - Button: components/inputs/button.md
+      - TextField: components/inputs/textfield.md
+      - Select: components/inputs/select.md
+      - Checkbox: components/inputs/checkbox.md
+    - Display:
+      - Card: components/display/card.md
+      - Modal: components/display/modal.md
+      - Alert: components/display/alert.md
+      - Toast: components/display/toast.md
+  - Theming:
+    - Overview: theming/overview.md
+    - Custom Themes: theming/custom-themes.md
+    - Theme API: theming/theme-api.md
+  - Community: community.md
+  - API Reference: api.md
