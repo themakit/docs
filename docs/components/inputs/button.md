@@ -66,6 +66,15 @@ Buttons are available in different sizes to fit your design needs.
 | --------- | ----------------------------- | ----------- | ------------------------------- |
 | `variant` | `'primary' | 'secondary' | 'outline' | 'text' | 'destructive'` | `'primary'`  | The variant of the button      |
 | `size`    | `'sm' | 'md' | 'lg'`             | `'md'`      | The size of the button          |
+| `disabled` | `boolean` | `false` | Whether the button is disabled |
+| `loading` | `boolean` | `false` | Whether the button is in a loading state |
+| `fullWidth` | `boolean` | `false` | If true, the button will take up the full width of its container |
+| `startIcon` | `ReactNode` |       | Icon to display at the start of the button | 
+| `endIcon` | `ReactNode` |     | Icon to display at the end of the button |
+| `icon` | `ReactNode` |        | Icon to display (for icon-only buttons) |
+| `type` | `'button' | 'submit' | 'reset'` | `'button'` | The HTML button type |
+| `onClick` | `(event: React.MouseEvent<HTMLButtonElement>) => void` |      | Function called when the button is clicked |
+| `ref` | `React.Ref<HTMLButtonElement>` |      | Ref forwarded to the button element |
 
 The Button component also accepts all props that can be passed to a standard HTML button element.
 

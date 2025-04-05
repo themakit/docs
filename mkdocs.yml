@@ -19,7 +19,7 @@ theme:
     logo: logo
     favicon: logo
 
-repo_url: https://github.com/themakit/website
+repo_url: https://github.com/themakit/docs
 edit_uri: edit/main/docs/
 
 markdown_extensions:
