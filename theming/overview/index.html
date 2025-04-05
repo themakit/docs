@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#theming-overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -163,7 +168,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/themakit/website" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/themakit/docs" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -343,7 +348,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/themakit/website" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/themakit/docs" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -987,6 +992,20 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -998,6 +1017,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#themeprovider" class="md-nav__link">
+    <span class="md-ellipsis">
+      ThemeProvider
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theme-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theme Provider
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-built-in-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Built-in Themes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-custom-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Custom Themes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1116,9 +1190,132 @@
   
 
 
-  <h1>Overview</h1>
+<h1 id="theming-overview">Theming Overview<a class="headerlink" href="#theming-overview" title="Permanent link">&para;</a></h1>
+<p>ThemaKit's theming system allows you to customize the appearance of all components to match your brand identity. The theming system is built to be flexible, type-safe, and easy to use.</p>
+<h2 id="themeprovider">ThemeProvider<a class="headerlink" href="#themeprovider" title="Permanent link">&para;</a></h2>
+<p>To apply a theme, wrap your application with the <code>ThemeProvider</code> component:</p>
+<div class="highlight"><pre><span></span><code>import { ThemeProvider } from &#39;@themakit/core&#39;;
+import { defaultTheme } from &#39;@themakit/theme&#39;;
 
+function App() {
+  return (
+    &lt;ThemeProvider theme={defaultTheme}&gt;
+    &lt;/ThemeProvider&gt;
+  );
+}
+</code></pre></div>
+<h2 id="theme-provider">Theme Provider<a class="headerlink" href="#theme-provider" title="Permanent link">&para;</a></h2>
+<p>A ThemaKit theme is an object with the following structure:
+<div class="highlight"><pre><span></span><code>const theme = {
+  // Color palette
+  colors: {
+    primary: &#39;#0066ff&#39;,
+    secondary: &#39;#6c757d&#39;,
+    success: &#39;#28a745&#39;,
+    error: &#39;#dc3545&#39;,
+    warning: &#39;#ffc107&#39;,
+    info: &#39;#17a2b8&#39;,
+    // ... other colors
+  },
 
+  // Typography settings
+  typography: {
+    fontFamily: &#39;Inter, system-ui, sans-serif&#39;,
+    fontSize: {
+      xs: &#39;0.75rem&#39;,
+      sm: &#39;0.875rem&#39;,
+      md: &#39;1rem&#39;,
+      lg: &#39;1.125rem&#39;,
+      xl: &#39;1.25rem&#39;,
+      // ... other sizes
+    },
+    fontWeight: {
+      regular: 400,
+      medium: 500,
+      bold: 700,
+      // ... other weights
+    },
+    lineHeight: {
+      tight: 1.25,
+      normal: 1.5,
+      loose: 1.75,
+      // ... other line heights
+    },
+  },
+
+  // Spacing system
+  spacing: {
+    xs: &#39;0.25rem&#39;,
+    sm: &#39;0.5rem&#39;,
+    md: &#39;1rem&#39;,
+    lg: &#39;1.5rem&#39;,
+    xl: &#39;2rem&#39;,
+    // ... other spacing values
+  },
+
+  // Border radius
+  borderRadius: {
+    sm: &#39;0.125rem&#39;,
+    md: &#39;0.25rem&#39;,
+    lg: &#39;0.5rem&#39;,
+    pill: &#39;9999px&#39;,
+  },
+
+  // Shadows
+  shadows: {
+    sm: &#39;0 1px 2px 0 rgba(0, 0, 0, 0.05)&#39;,
+    md: &#39;0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)&#39;,
+    lg: &#39;0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)&#39;,
+    // ... other shadow values
+  },
+
+  // Component-specific styling
+  components: {
+    Button: {
+      // ... button specific theme options
+    },
+    Card: {
+      // ... card specific theme options
+    },
+    // ... other components
+  }
+};
+</code></pre></div></p>
+<h2 id="using-built-in-themes">Using Built-in Themes<a class="headerlink" href="#using-built-in-themes" title="Permanent link">&para;</a></h2>
+<p>ThemaKit comes with several built-in themes:
+<div class="highlight"><pre><span></span><code>import { ThemeProvider } from &#39;@themakit/core&#39;;
+import { defaultTheme, darkTheme, systemTheme } from &#39;@themakit/theme&#39;;
+
+function App() {
+  return (
+    &lt;ThemeProvider theme={darkTheme}&gt;
+      {/* Your application */}
+    &lt;/ThemeProvider&gt;
+  );
+}
+</code></pre></div></p>
+<h2 id="creating-custom-themes">Creating Custom Themes<a class="headerlink" href="#creating-custom-themes" title="Permanent link">&para;</a></h2>
+<p>You can create custom themes by extending the default theme:
+<div class="highlight"><pre><span></span><code>import { createTheme } from &#39;@themakit/theme&#39;;
+
+const customTheme = createTheme({
+  colors: {
+    primary: &#39;#ff4500&#39;, // Override primary color
+    secondary: &#39;#2e2e2e&#39;,
+  },
+  typography: {
+    fontFamily: &#39;Poppins, sans-serif&#39;,
+  },
+  // ... other overrides
+});
+</code></pre></div>
+For more details on customizing specific aspects of the theme, see:</p>
+<ul>
+<li>Theme Provider</li>
+<li><a href="../custom-themes">Custom Themes</a></li>
+<li><a href="../theme-api">Theme API</a></li>
+<li>Dark Mode</li>
+</ul>
 
 
 
