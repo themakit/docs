@@ -44,4 +44,4 @@ npm install typescript @types/react @types/react-dom --save-dev
 
 
 ## Next Steps
-After installation, check out our Quick Start guide to begin building with ThemaKit.
+After installation, check out our [Quick Start](../quick-start) guide to begin building with ThemaKit.

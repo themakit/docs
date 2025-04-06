@@ -6,8 +6,8 @@ site_url: https://thema.js.org/docs
 theme:
   name: material
   palette:
-    primary: mint
-    accent: mint
+    primary: teal
+    accent: teal
   features:
     - navigation.tabs
     - navigation.sections
@@ -15,9 +15,17 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
-  icon:
-    logo: logo
-    favicon: logo
+    - navigation.footer
+
+  logo: assets/logo.svg
+  favicon: assets/icon.png
+  search:
+    provider: lunr
+    lang: en
+    index: true
+    search_index: true
+    search_suggest: true
+    search_highlight: true
 
 repo_url: https://github.com/themakit/docs
 edit_uri: edit/main/docs/
@@ -57,6 +65,16 @@ nav:
   - Theming:
     - Overview: theming/overview.md
     - Custom Themes: theming/custom-themes.md
-    - Theme API: theming/theme-api.md
-  - Community: community.md
-  - API Reference: api.md
+    - Dark Mode: theming/dark-mode.md
+  - Animations:
+    - Overview: animations/overview.md
+    - Transitions: animations/transitions.md
+    - Keyframes: animations/keyframes.md
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/themakit
+      name: View on GitHub
+copyright: Copyright &copy; 2025 ThemaKit. All rights reserved.
