@@ -5,7 +5,7 @@ The `TextField` component is used to capture user input in the form of text.
 ## Import
 
 ```tsx
-import { TextField } from '@themakit/textfield';
+import { TextField } from '@themakit/inputs';
 ```
 
 ## Usage

@@ -5,7 +5,7 @@ The `Grid` component is used to create responsive layouts with rows and columns.
 ## Import
 
 ```tsx
-import { Grid, GridItem } from '@themakit/grid';
+import { Grid, GridItem } from '@themakit/inputs';
 ```
 
 ## Usage

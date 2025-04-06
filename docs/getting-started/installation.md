@@ -20,7 +20,7 @@ Install only the component packages you need:
 npm install @themakit/layout
 
 # Input components
-npm install @themakit/button @themakit/input @themakit/select @themakit/checkbox
+npm install @themakit/inputs
 
 # Display components
 npm install @themakit/card @themakit/modal @themakit/alert @themakit/toast

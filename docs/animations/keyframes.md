@@ -1,129 +1,72 @@
-# Dark Mode
+# Keyframes
 
-ThemaKit supports dark mode, allowing you to create a visually appealing experience for users in low-light environments.
+The `Keyframes` utility in ThemaKit allows you to define and use CSS animations in your components.
 
-## Enabling Dark Mode
-
-You can enable dark mode by creating a custom theme with a dark color palette.
+## Import
 
 ```tsx
-import { createTheme, ThemeProvider } from '@themakit/theme';
+import { keyframes } from '@themakit/animations';
+```
 
-const darkTheme = createTheme({
-  palette: {
-    background: '#121212',
-    text: '#ffffff',
-    primary: '#bb86fc',
-    accent: '#03dac6',
-  },
-  components: {
-    Button: {
-      backgroundColor: '#bb86fc',
-      color: '#ffffff',
-      hoverBackgroundColor: '#3700b3',
-    },
-  },
-});
+## Creating Keyframes
+
+You can create custom keyframes using the `keyframes` utility.
+
+```tsx
+import { keyframes } from '@themakit/animations';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+```
+
+## Using Keyframes in Components
+
+Apply the keyframes to a component using the `animation` property.
+
+```tsx
+import styled from 'styled-components';
+import { keyframes } from '@themakit/animations';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const AnimatedDiv = styled.div`
+  animation: ${fadeIn} 2s ease-in-out;
+`;
 
 const App = () => (
-  <ThemeProvider theme={darkTheme}>
-    <h1>Dark Mode Example</h1>
-  </ThemeProvider>
+  <AnimatedDiv>
+    <p>This content fades in!</p>
+  </AnimatedDiv>
 );
 ```
 
-## Switching Between Light and Dark Mode
+## Props
 
-You can dynamically switch between light and dark themes based on user preferences or a toggle.
-
-```tsx
-import React, { useState } from 'react';
-import { createTheme, ThemeProvider } from '@themakit/theme';
-
-const lightTheme = createTheme({
-  palette: {
-    background: '#ffffff',
-    text: '#000000',
-    primary: '#4caf50',
-    accent: '#ff5722',
-  },
-});
-
-const darkTheme = createTheme({
-  palette: {
-    background: '#121212',
-    text: '#ffffff',
-    primary: '#bb86fc',
-    accent: '#03dac6',
-  },
-});
-
-const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <button onClick={() => setIsDarkMode(!isDarkMode)}>
-        Toggle Dark Mode
-      </button>
-      <h1>{isDarkMode ? 'Dark Mode' : 'Light Mode'}</h1>
-    </ThemeProvider>
-  );
-};
-```
-
-## Using System Preferences
-
-You can detect the user's system preference for dark mode using the `window.matchMedia` API.
-
-```tsx
-import React, { useEffect, useState } from 'react';
-import { createTheme, ThemeProvider } from '@themakit/theme';
-
-const lightTheme = createTheme({
-  palette: {
-    background: '#ffffff',
-    text: '#000000',
-    primary: '#4caf50',
-    accent: '#ff5722',
-  },
-});
-
-const darkTheme = createTheme({
-  palette: {
-    background: '#121212',
-    text: '#ffffff',
-    primary: '#bb86fc',
-    accent: '#03dac6',
-  },
-});
-
-const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-  );
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = () => setIsDarkMode(mediaQuery.matches);
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <h1>{isDarkMode ? 'Dark Mode' : 'Light Mode'}</h1>
-    </ThemeProvider>
-  );
-};
-```
+| Prop         | Type                | Default   | Description                                      |
+|--------------|---------------------|-----------|--------------------------------------------------|
+| `keyframes`  | `string`            | `null`    | The keyframes definition for the animation.     |
+| `duration`   | `string`            | `'1s'`    | The duration of the animation.                  |
+| `timing`     | `string`            | `'ease'`  | The timing function for the animation.          |
 
 ## Accessibility
 
-- Ensure sufficient contrast between text and background colors in dark mode.
-- Test your application in both light and dark modes to ensure a consistent user experience.
+- Use animations sparingly to avoid overwhelming users.
+- Provide alternatives or disable animations for users with motion sensitivity.
 
 ## Next Steps
 
-- Learn more about [Custom Themes](custom-themes.md) to further customize your dark mode.
-- Explore the [Theme API](theme-api.md) for advanced theming options.
+- Learn about [Transitions](transitions.md) for simpler animations.
+- Explore the [Theming Guide](../theming/overview.md) to customize animations.

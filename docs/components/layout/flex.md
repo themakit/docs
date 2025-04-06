@@ -5,7 +5,7 @@ The `Flex` component is used to create flexible layouts using CSS flexbox.
 ## Import
 
 ```tsx
-import { Flex } from '@themakit/flex';
+import { Flex } from '@themakit/a';
 ```
 
 ## Usage

@@ -1,77 +1,65 @@
-# TextField
+# Container
 
-The `TextField` component is used to capture user input in the form of text.
+The `Container` component is used to center and constrain the width of your content.
 
 ## Import
 
 ```tsx
-import { TextField } from '@themakit/textfield';
+import { Container } from '@themakit/container';
 ```
 
 ## Usage
 
-### Basic TextField
+### Basic Container
 
 ```tsx
-<TextField placeholder="Enter your name" />
+<Container>
+  <p>This content is inside a container.</p>
+</Container>
 ```
 
-### Controlled TextField
+### Fluid Container
 
-You can control the value of the `TextField` using the `value` and `onChange` props.
+You can make the container fluid (full-width) using the `fluid` prop.
 
 ```tsx
-const [value, setValue] = React.useState('');
-
-<TextField
-  value={value}
-  onChange={(e) => setValue(e.target.value)}
-  placeholder="Enter your email"
-/>;
+<Container fluid>
+  <p>This content spans the full width of the screen.</p>
+</Container>
 ```
 
-### TextField with Label
+### Custom Max Width
 
-You can add a label to the `TextField` for better context.
-
-```tsx
-<TextField label="Name" placeholder="Enter your name" />
-```
-
-### Disabled TextField
-
-You can disable the `TextField` using the `disabled` prop.
+You can specify a custom maximum width for the container.
 
 ```tsx
-<TextField label="Disabled" placeholder="Cannot type here" disabled />
+<Container maxWidth="800px">
+  <p>This content is constrained to a maximum width of 800px.</p>
+</Container>
 ```
 
 ## Props
 
 | Prop         | Type                | Default   | Description                                      |
 |--------------|---------------------|-----------|--------------------------------------------------|
-| `value`      | `string`            | `''`      | The current value of the text field.            |
-| `onChange`   | `(event: React.ChangeEvent<HTMLInputElement>) => void` | `null` | Callback triggered when the value changes.      |
-| `placeholder`| `string`            | `''`      | Placeholder text displayed inside the text field. |
-| `label`      | `string`            | `null`    | Label displayed above the text field.           |
-| `disabled`   | `boolean`           | `false`   | Whether the text field is disabled.             |
+| `fluid`      | `boolean`           | `false`   | Whether the container spans the full width of the screen. |
+| `maxWidth`   | `string`            | `'1200px'`| The maximum width of the container.             |
 
 ## Accessibility
 
-- The `TextField` component uses native `<input>` elements for accessibility.
-- Ensure the `label` prop provides meaningful context for screen readers.
+- The `Container` component is a layout tool and does not have specific accessibility features.
+- Ensure the content inside the container is accessible.
 
 ## Theming
 
-You can customize the appearance of the `TextField` component using the theme:
+You can customize the appearance of the `Container` component using the theme:
 
 ```tsx
 const theme = {
   components: {
-    TextField: {
-      backgroundColor: '#fff',
-      borderColor: '#ccc',
-      focusBorderColor: '#4caf50',
+    Container: {
+      maxWidth: '1200px',
+      padding: '16px',
     },
   },
 };

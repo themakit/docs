@@ -5,7 +5,7 @@ The `Checkbox` component is used to allow users to select one or more options fr
 ## Import
 
 ```tsx
-import { Checkbox } from '@themakit/checkbox';
+import { Checkbox } from '@themakit/inputs';
 ```
 
 ## Usage

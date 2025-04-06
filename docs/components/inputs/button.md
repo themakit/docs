@@ -5,7 +5,7 @@ The Button component is used to trigger an action or event, such as submitting a
 ## Import
 
 ```tsx
-import { Button } from '@themakit/button';
+import { Button } from '@themakit/inputs';
 ```
 
 ## Usage
