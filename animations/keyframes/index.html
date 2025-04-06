@@ -24,7 +24,7 @@
     
     
       
-        <title>Keyframes - ThemaKit</title>
+        <title>Keyframes - ThemaDocs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dark-mode" class="md-skip">
+        <a href="#keyframes" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="ThemaKit" class="md-header__button md-logo" aria-label="ThemaKit" data-md-component="logo">
+    <a href="../.." title="ThemaDocs" class="md-header__button md-logo" aria-label="ThemaDocs" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
@@ -101,7 +101,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            ThemaKit
+            ThemaDocs
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -309,12 +309,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="ThemaKit" class="md-nav__button md-logo" aria-label="ThemaKit" data-md-component="logo">
+    <a href="../.." title="ThemaDocs" class="md-nav__button md-logo" aria-label="ThemaDocs" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
     </a>
-    ThemaKit
+    ThemaDocs
   </label>
   
     <div class="md-nav__source">
@@ -1162,27 +1162,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enabling-dark-mode" class="md-nav__link">
+  <a href="#import" class="md-nav__link">
     <span class="md-ellipsis">
-      Enabling Dark Mode
+      Import
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#switching-between-light-and-dark-mode" class="md-nav__link">
+  <a href="#creating-keyframes" class="md-nav__link">
     <span class="md-ellipsis">
-      Switching Between Light and Dark Mode
+      Creating Keyframes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-system-preferences" class="md-nav__link">
+  <a href="#using-keyframes-in-components" class="md-nav__link">
     <span class="md-ellipsis">
-      Using System Preferences
+      Using Keyframes in Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Props
     </span>
   </a>
   
@@ -1241,121 +1250,88 @@
   
 
 
-<h1 id="dark-mode">Dark Mode<a class="headerlink" href="#dark-mode" title="Permanent link">&para;</a></h1>
-<p>ThemaKit supports dark mode, allowing you to create a visually appealing experience for users in low-light environments.</p>
-<h2 id="enabling-dark-mode">Enabling Dark Mode<a class="headerlink" href="#enabling-dark-mode" title="Permanent link">&para;</a></h2>
-<p>You can enable dark mode by creating a custom theme with a dark color palette.</p>
-<div class="highlight"><pre><span></span><code>import { createTheme, ThemeProvider } from &#39;@themakit/theme&#39;;
+<h1 id="keyframes">Keyframes<a class="headerlink" href="#keyframes" title="Permanent link">&para;</a></h1>
+<p>The <code>Keyframes</code> utility in ThemaKit allows you to define and use CSS animations in your components.</p>
+<h2 id="import">Import<a class="headerlink" href="#import" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>import { keyframes } from &#39;@themakit/animations&#39;;
+</code></pre></div>
+<h2 id="creating-keyframes">Creating Keyframes<a class="headerlink" href="#creating-keyframes" title="Permanent link">&para;</a></h2>
+<p>You can create custom keyframes using the <code>keyframes</code> utility.</p>
+<div class="highlight"><pre><span></span><code>import { keyframes } from &#39;@themakit/animations&#39;;
 
-const darkTheme = createTheme({
-  palette: {
-    background: &#39;#121212&#39;,
-    text: &#39;#ffffff&#39;,
-    primary: &#39;#bb86fc&#39;,
-    accent: &#39;#03dac6&#39;,
-  },
-  components: {
-    Button: {
-      backgroundColor: &#39;#bb86fc&#39;,
-      color: &#39;#ffffff&#39;,
-      hoverBackgroundColor: &#39;#3700b3&#39;,
-    },
-  },
-});
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+</code></pre></div>
+<h2 id="using-keyframes-in-components">Using Keyframes in Components<a class="headerlink" href="#using-keyframes-in-components" title="Permanent link">&para;</a></h2>
+<p>Apply the keyframes to a component using the <code>animation</code> property.</p>
+<div class="highlight"><pre><span></span><code>import styled from &#39;styled-components&#39;;
+import { keyframes } from &#39;@themakit/animations&#39;;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const AnimatedDiv = styled.div`
+  animation: ${fadeIn} 2s ease-in-out;
+`;
 
 const App = () =&gt; (
-  &lt;ThemeProvider theme={darkTheme}&gt;
-    &lt;h1&gt;Dark Mode Example&lt;/h1&gt;
-  &lt;/ThemeProvider&gt;
+  &lt;AnimatedDiv&gt;
+    &lt;p&gt;This content fades in!&lt;/p&gt;
+  &lt;/AnimatedDiv&gt;
 );
 </code></pre></div>
-<h2 id="switching-between-light-and-dark-mode">Switching Between Light and Dark Mode<a class="headerlink" href="#switching-between-light-and-dark-mode" title="Permanent link">&para;</a></h2>
-<p>You can dynamically switch between light and dark themes based on user preferences or a toggle.</p>
-<div class="highlight"><pre><span></span><code>import React, { useState } from &#39;react&#39;;
-import { createTheme, ThemeProvider } from &#39;@themakit/theme&#39;;
-
-const lightTheme = createTheme({
-  palette: {
-    background: &#39;#ffffff&#39;,
-    text: &#39;#000000&#39;,
-    primary: &#39;#4caf50&#39;,
-    accent: &#39;#ff5722&#39;,
-  },
-});
-
-const darkTheme = createTheme({
-  palette: {
-    background: &#39;#121212&#39;,
-    text: &#39;#ffffff&#39;,
-    primary: &#39;#bb86fc&#39;,
-    accent: &#39;#03dac6&#39;,
-  },
-});
-
-const App = () =&gt; {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  return (
-    &lt;ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}&gt;
-      &lt;button onClick={() =&gt; setIsDarkMode(!isDarkMode)}&gt;
-        Toggle Dark Mode
-      &lt;/button&gt;
-      &lt;h1&gt;{isDarkMode ? &#39;Dark Mode&#39; : &#39;Light Mode&#39;}&lt;/h1&gt;
-    &lt;/ThemeProvider&gt;
-  );
-};
-</code></pre></div>
-<h2 id="using-system-preferences">Using System Preferences<a class="headerlink" href="#using-system-preferences" title="Permanent link">&para;</a></h2>
-<p>You can detect the user's system preference for dark mode using the <code>window.matchMedia</code> API.</p>
-<div class="highlight"><pre><span></span><code>import React, { useEffect, useState } from &#39;react&#39;;
-import { createTheme, ThemeProvider } from &#39;@themakit/theme&#39;;
-
-const lightTheme = createTheme({
-  palette: {
-    background: &#39;#ffffff&#39;,
-    text: &#39;#000000&#39;,
-    primary: &#39;#4caf50&#39;,
-    accent: &#39;#ff5722&#39;,
-  },
-});
-
-const darkTheme = createTheme({
-  palette: {
-    background: &#39;#121212&#39;,
-    text: &#39;#ffffff&#39;,
-    primary: &#39;#bb86fc&#39;,
-    accent: &#39;#03dac6&#39;,
-  },
-});
-
-const App = () =&gt; {
-  const [isDarkMode, setIsDarkMode] = useState(
-    window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches
-  );
-
-  useEffect(() =&gt; {
-    const mediaQuery = window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;);
-    const handleChange = () =&gt; setIsDarkMode(mediaQuery.matches);
-    mediaQuery.addEventListener(&#39;change&#39;, handleChange);
-    return () =&gt; mediaQuery.removeEventListener(&#39;change&#39;, handleChange);
-  }, []);
-
-  return (
-    &lt;ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}&gt;
-      &lt;h1&gt;{isDarkMode ? &#39;Dark Mode&#39; : &#39;Light Mode&#39;}&lt;/h1&gt;
-    &lt;/ThemeProvider&gt;
-  );
-};
-</code></pre></div>
+<h2 id="props">Props<a class="headerlink" href="#props" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>keyframes</code></td>
+<td><code>string</code></td>
+<td><code>null</code></td>
+<td>The keyframes definition for the animation.</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td><code>string</code></td>
+<td><code>'1s'</code></td>
+<td>The duration of the animation.</td>
+</tr>
+<tr>
+<td><code>timing</code></td>
+<td><code>string</code></td>
+<td><code>'ease'</code></td>
+<td>The timing function for the animation.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="accessibility">Accessibility<a class="headerlink" href="#accessibility" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Ensure sufficient contrast between text and background colors in dark mode.</li>
-<li>Test your application in both light and dark modes to ensure a consistent user experience.</li>
+<li>Use animations sparingly to avoid overwhelming users.</li>
+<li>Provide alternatives or disable animations for users with motion sensitivity.</li>
 </ul>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Learn more about <a href="custom-themes.md">Custom Themes</a> to further customize your dark mode.</li>
-<li>Explore the <a href="theme-api.md">Theme API</a> for advanced theming options.</li>
+<li>Learn about <a href="../transitions/">Transitions</a> for simpler animations.</li>
+<li>Explore the <a href="../../theming/overview/">Theming Guide</a> to customize animations.</li>
 </ul>
 
 

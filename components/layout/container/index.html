@@ -26,7 +26,7 @@
     
     
       
-        <title>Container - ThemaKit</title>
+        <title>Container - ThemaDocs</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#textfield" class="md-skip">
+        <a href="#container" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="ThemaKit" class="md-header__button md-logo" aria-label="ThemaKit" data-md-component="logo">
+    <a href="../../.." title="ThemaDocs" class="md-header__button md-logo" aria-label="ThemaDocs" data-md-component="logo">
       
   <img src="../../../assets/logo.svg" alt="logo">
 
@@ -103,7 +103,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            ThemaKit
+            ThemaDocs
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -313,12 +313,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="ThemaKit" class="md-nav__button md-logo" aria-label="ThemaKit" data-md-component="logo">
+    <a href="../../.." title="ThemaDocs" class="md-nav__button md-logo" aria-label="ThemaDocs" data-md-component="logo">
       
   <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
-    ThemaKit
+    ThemaDocs
   </label>
   
     <div class="md-nav__source">
@@ -614,36 +614,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-textfield" class="md-nav__link">
+  <a href="#basic-container" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic TextField
+      Basic Container
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#controlled-textfield" class="md-nav__link">
+  <a href="#fluid-container" class="md-nav__link">
     <span class="md-ellipsis">
-      Controlled TextField
+      Fluid Container
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#textfield-with-label" class="md-nav__link">
+  <a href="#custom-max-width" class="md-nav__link">
     <span class="md-ellipsis">
-      TextField with Label
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disabled-textfield" class="md-nav__link">
-    <span class="md-ellipsis">
-      Disabled TextField
+      Custom Max Width
     </span>
   </a>
   
@@ -1298,32 +1289,28 @@
   
 
 
-<h1 id="textfield">TextField<a class="headerlink" href="#textfield" title="Permanent link">&para;</a></h1>
-<p>The <code>TextField</code> component is used to capture user input in the form of text.</p>
+<h1 id="container">Container<a class="headerlink" href="#container" title="Permanent link">&para;</a></h1>
+<p>The <code>Container</code> component is used to center and constrain the width of your content.</p>
 <h2 id="import">Import<a class="headerlink" href="#import" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>import { TextField } from &#39;@themakit/textfield&#39;;
+<div class="highlight"><pre><span></span><code>import { Container } from &#39;@themakit/container&#39;;
 </code></pre></div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<h3 id="basic-textfield">Basic TextField<a class="headerlink" href="#basic-textfield" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>&lt;TextField placeholder=&quot;Enter your name&quot; /&gt;
+<h3 id="basic-container">Basic Container<a class="headerlink" href="#basic-container" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>&lt;Container&gt;
+  &lt;p&gt;This content is inside a container.&lt;/p&gt;
+&lt;/Container&gt;
 </code></pre></div>
-<h3 id="controlled-textfield">Controlled TextField<a class="headerlink" href="#controlled-textfield" title="Permanent link">&para;</a></h3>
-<p>You can control the value of the <code>TextField</code> using the <code>value</code> and <code>onChange</code> props.</p>
-<div class="highlight"><pre><span></span><code>const [value, setValue] = React.useState(&#39;&#39;);
-
-&lt;TextField
-  value={value}
-  onChange={(e) =&gt; setValue(e.target.value)}
-  placeholder=&quot;Enter your email&quot;
-/&gt;;
+<h3 id="fluid-container">Fluid Container<a class="headerlink" href="#fluid-container" title="Permanent link">&para;</a></h3>
+<p>You can make the container fluid (full-width) using the <code>fluid</code> prop.</p>
+<div class="highlight"><pre><span></span><code>&lt;Container fluid&gt;
+  &lt;p&gt;This content spans the full width of the screen.&lt;/p&gt;
+&lt;/Container&gt;
 </code></pre></div>
-<h3 id="textfield-with-label">TextField with Label<a class="headerlink" href="#textfield-with-label" title="Permanent link">&para;</a></h3>
-<p>You can add a label to the <code>TextField</code> for better context.</p>
-<div class="highlight"><pre><span></span><code>&lt;TextField label=&quot;Name&quot; placeholder=&quot;Enter your name&quot; /&gt;
-</code></pre></div>
-<h3 id="disabled-textfield">Disabled TextField<a class="headerlink" href="#disabled-textfield" title="Permanent link">&para;</a></h3>
-<p>You can disable the <code>TextField</code> using the <code>disabled</code> prop.</p>
-<div class="highlight"><pre><span></span><code>&lt;TextField label=&quot;Disabled&quot; placeholder=&quot;Cannot type here&quot; disabled /&gt;
+<h3 id="custom-max-width">Custom Max Width<a class="headerlink" href="#custom-max-width" title="Permanent link">&para;</a></h3>
+<p>You can specify a custom maximum width for the container.</p>
+<div class="highlight"><pre><span></span><code>&lt;Container maxWidth=&quot;800px&quot;&gt;
+  &lt;p&gt;This content is constrained to a maximum width of 800px.&lt;/p&gt;
+&lt;/Container&gt;
 </code></pre></div>
 <h2 id="props">Props<a class="headerlink" href="#props" title="Permanent link">&para;</a></h2>
 <table>
@@ -1337,50 +1324,31 @@
 </thead>
 <tbody>
 <tr>
-<td><code>value</code></td>
-<td><code>string</code></td>
-<td><code>''</code></td>
-<td>The current value of the text field.</td>
-</tr>
-<tr>
-<td><code>onChange</code></td>
-<td><code>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; void</code></td>
-<td><code>null</code></td>
-<td>Callback triggered when the value changes.</td>
-</tr>
-<tr>
-<td><code>placeholder</code></td>
-<td><code>string</code></td>
-<td><code>''</code></td>
-<td>Placeholder text displayed inside the text field.</td>
-</tr>
-<tr>
-<td><code>label</code></td>
-<td><code>string</code></td>
-<td><code>null</code></td>
-<td>Label displayed above the text field.</td>
-</tr>
-<tr>
-<td><code>disabled</code></td>
+<td><code>fluid</code></td>
 <td><code>boolean</code></td>
 <td><code>false</code></td>
-<td>Whether the text field is disabled.</td>
+<td>Whether the container spans the full width of the screen.</td>
+</tr>
+<tr>
+<td><code>maxWidth</code></td>
+<td><code>string</code></td>
+<td><code>'1200px'</code></td>
+<td>The maximum width of the container.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="accessibility">Accessibility<a class="headerlink" href="#accessibility" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The <code>TextField</code> component uses native <code>&lt;input&gt;</code> elements for accessibility.</li>
-<li>Ensure the <code>label</code> prop provides meaningful context for screen readers.</li>
+<li>The <code>Container</code> component is a layout tool and does not have specific accessibility features.</li>
+<li>Ensure the content inside the container is accessible.</li>
 </ul>
 <h2 id="theming">Theming<a class="headerlink" href="#theming" title="Permanent link">&para;</a></h2>
-<p>You can customize the appearance of the <code>TextField</code> component using the theme:</p>
+<p>You can customize the appearance of the <code>Container</code> component using the theme:</p>
 <div class="highlight"><pre><span></span><code>const theme = {
   components: {
-    TextField: {
-      backgroundColor: &#39;#fff&#39;,
-      borderColor: &#39;#ccc&#39;,
-      focusBorderColor: &#39;#4caf50&#39;,
+    Container: {
+      maxWidth: &#39;1200px&#39;,
+      padding: &#39;16px&#39;,
     },
   },
 };
