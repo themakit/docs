@@ -12,6 +12,10 @@ Get started with ThemaKit in your React project:
 
 [Installation →](getting-started/installation.md)
 
+Or, if you want to just try it out: 
+
+[![CodeSandbox](https://assets.codesandbox.io/github/button-edit-green.svg)](https://codesandbox.io/p/sandbox/themakit-demo-95mvfh)
+
 ---
 
 ## Features
